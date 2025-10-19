@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lettera n.3 – I Genitori: i primi angeli - Le Lettere di Antonino</title>
+  <style>
+    /* TEMA SPIRITUALE - COLORI PRINCIPALI */
+    :root {
+      --colore-notte: #1a1a2e;
+      --colore-crepuscolo: #16213e;
+      --colore-oro: #d4af37;
+      --colore-oro-trasparente: rgba(212, 175, 55, 0.1);
+      --colore-testo: #f1f1f1;
+      --colore-testo-secondario: #b8b8b8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(135deg, var(--colore-notte), var(--colore-crepuscolo));
+      color: var(--colore-testo);
+      font-family: 'Georgia', serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* HEADER EROICO */
+    .hero {
+      background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(22, 33, 62, 0.9)), 
+                  url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%231a1a2e" width="1200" height="800"/><circle fill="%23d4af37" opacity="0.05" cx="200" cy="200" r="100"/><circle fill="%23d4af37" opacity="0.03" cx="800" cy="400" r="150"/><circle fill="%23d4af37" opacity="0.07" cx="1000" cy="150" r="80"/></svg>');
+      min-height: 30vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      z-index: 2;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--colore-oro);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+      font-weight: normal;
+      letter-spacing: 2px;
+    }
+
+    .hero .sottotitolo {
+      font-size: 1.2rem;
+      color: var(--colore-testo-secondario);
+      font-style: italic;
+    }
+
+    /* NAVIGATION */
+    .navbar {
+      background: rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 1rem;
+    }
+
+    .navbar li {
+      margin: 0 1.5rem;
+    }
+
+    .navbar a {
+      color: var(--colore-testo);
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+      position: relative;
+    }
+
+    .navbar a:hover {
+      color: var(--colore-oro);
+    }
+
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background: var(--colore-oro);
+      transition: width 0.3s ease;
+    }
+
+    .navbar a:hover::after {
+      width: 100%;
+    }
+
+    /* CONTENUTO LETTERA */
+    .contenuto-lettera {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .intestazione-lettera {
+      text-align: center;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+      padding-bottom: 2rem;
+    }
+
+    .intestazione-lettera h1 {
+      font-size: 2.2rem;
+      color: var(--colore-oro);
+      margin-bottom: 1rem;
+    }
+
+    .data-lettera {
+      color: var(--colore-testo-secondario);
+      font-size: 1rem;
+      font-style: italic;
+    }
+
+    .testo-lettera {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 3rem;
+    }
+
+    .testo-lettera p {
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+
+    .firma-lettera {
+      text-align: right;
+      font-style: italic;
+      color: var(--colore-oro);
+      margin-top: 3rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+      padding-top: 1rem;
+    }
+
+    /* BOTTONI */
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: transparent;
+      color: var(--colore-oro);
+      border: 2px solid var(--colore-oro);
+      text-decoration: none;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+    }
+
+    .btn:hover {
+      background: var(--colore-oro);
+      color: var(--colore-notte);
+      transform: translateY(-2px);
+    }
+
+    .navigazione-lettere {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    /* FOOTER */
+    footer {
+      background: rgba(0, 0, 0, 0.5);
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+      color: var(--colore-testo-secondario);
+      border-top: 1px solid rgba(212, 175, 55, 0.2);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .contenuto-lettera {
+        padding: 0 1rem;
+        margin: 2rem auto;
+      }
+      
+      .navigazione-lettere {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+      
+      .navbar ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Le Lettere di Antonino</h1>
+      <p class="sottotitolo">di Pradd Mill</p>
+    </div>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="index.html#lettere">Altre Lettere</a></li>
+      <li><a href="index.html#capitoli">I Capitoli</a></li>
+      <li><a href="index.html#contatti">Contatti</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENUTO LETTERA -->
+  <main class="contenuto-lettera">
+    <div class="intestazione-lettera">
+      <h1>Lettera n.3 – I Genitori: i primi angeli</h1>
+      <div class="data-lettera">In memoria dei miei genitori</div>
+    </div>
+
+    <div class="testo-lettera">
+      <!-- INIZIO CONTENUTO -->
+      <p>Quando penso ai miei genitori, mi viene naturale chiamarli così: i miei primi angeli.</p>
+      
+      <p>Non perché fossero perfetti, ma perché sono stati loro a darmi le ali, anche quando io non sapevo ancora di averle.</p>
+
+      <p>Mia madre aveva un modo tutto suo di insegnare le cose: non parlava molto, ma bastava guardarla per capire.</p>
+      
+      <p>I suoi gesti erano semplici, le mani sempre occupate — tra il lavoro, la casa, le preghiere — eppure trovava sempre un momento per uno sguardo, per un sorriso, per un abbraccio che metteva in ordine tutto.</p>
+      
+      <p>Era la sua fede silenziosa a tenerci in piedi, più che le parole.</p>
+      
+      <p>E oggi, quando chiudo gli occhi, la sento ancora vicino, come una luce che non si spegne mai.</p>
+
+      <p>Mio padre invece era diverso. Meno parole, più concretezza.</p>
+      
+      <p>Mi ha insegnato che il mondo non ti regala niente, ma che puoi sempre scegliere di restare onesto.</p>
+      
+      <p>Mi parlava poco, ma quello che diceva aveva un peso.</p>
+      
+      <p>Una volta mi disse: "Antonino, non serve essere grandi per valere qualcosa. Serve essere giusti".</p>
+      
+      <p>E da quella frase non mi sono mai separato.</p>
+
+      <p>Crescendo, ho capito che non erano solo genitori.</p>
+      
+      <p>Erano strumenti. Mani di Dio che mi hanno plasmato, preparato, sostenuto.</p>
+      
+      <p>Hanno fatto il loro tratto di cammino con me e poi, piano piano, mi hanno lasciato andare.</p>
+
+      <p>Quando se ne sono andati, ho sentito il vuoto, sì.</p>
+      
+      <p>Un vuoto che brucia, che sembra non guarire mai.</p>
+      
+      <p>Ma in quel dolore ho capito una cosa che prima non vedevo: l'amore non finisce quando qualcuno muore, cambia solo forma.</p>
+      
+      <p>Diventa presenza invisibile, diventa forza, diventa memoria viva.</p>
+
+      <p>Oggi non li vedo più, ma li sento.</p>
+      
+      <p>Quando faccio una scelta difficile, quando prego, quando sbaglio, quando mi rialzo.</p>
+      
+      <p>Sono lì, dietro di me, come due voci silenziose che non smettono mai di guidarmi.</p>
+
+      <p>I genitori sono davvero i primi angeli.</p>
+      
+      <p>Ti mettono al mondo, ti insegnano a camminare e poi, quando è il momento, ti lasciano andare perché tu possa trovare la tua strada.</p>
+      
+      <p>E quando guardi indietro, capisci che quella strada l'hanno tracciata loro, passo dopo passo, con amore, sacrificio e fede.</p>
+      <!-- FINE CONTENUTO -->
+
+      <div class="firma-lettera">
+        <p>Con affetto,<br>Antonino +</p>
+      </div>
+    </div>
+
+    <div class="navigazione-lettere">
+      <a href="lettera-2.html" class="btn">← Lettera Precedente</a>
+      <a href="index.html" class="btn">Torna alla Home</a>
+      <a href="lettera-4.html" class="btn">Lettera Successiva →</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Le Lettere di Antonino – di Pradd Mill</p>
+    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.7;">
+      "Ogni parola è un piccolo ritorno verso casa"
+    </p>
+  </footer>
+
+</body>
+</html>
